@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form test</title>
+    <link rel="stylesheet" href="/css/form.css">
+</head>
+<body>
+<!--
+
+需求：
+    1. 使用 form 表单完成图片上传
+
+提示:
+    注意事项：
+        1. form 表单的属性
+            1. action       服务器路由
+            2. method       post
+            3. enctype      编码格式 "multipart/form-data"
+        2. input 标签属性
+            1. name         名称
+-->
+
+<form action="http://127.0.0.1:3000/upload"    method="POST"    enctype="multipart/form-data" >
+
+    <span>上传头像:</span> <input type="file" name="avatar">
+    <br>
+    <input type="submit" value="提交">
+</form>
+
+
+</body>
+</html>
+
+
+
+
+

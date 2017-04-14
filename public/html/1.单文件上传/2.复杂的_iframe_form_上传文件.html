@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../js/jquery-1.10.1.js"></script>
+    <script src="../../js/1.single_file_upload/1.iframe_form.js"></script>
+</head>
+<body>
+
+<!--
+
+需求：
+    1. 完成无页面刷新的 文件上传
+
+提示:
+    思路：
+        1. 用 iframe 来承载 form 表单，这样刷新的是 iframe 而不是当前页面
+        2. 动态创建 iframe
+        3. 动态创建 from 表单
+        4. 动态的把当前 input 标签添加到 form 中
+-->
+
+
+
+
+<input type="file" id="uploadInput" name="avatar"/>
+
+
+
+
+
+
+</body>
+
+<script>
+
+
+    //事先埋伏好的函数，在收到服务器端响应的时候执行
+    function uploadResult() {
+        console.log('success');
+    }
+
+
+</script>
+</html>

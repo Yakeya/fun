@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<!--
+
+需求:
+    1. 使用 ajax 把服务器中的数据下载到内存
+    2. 在页面显示进度
+
+提示：
+    1. 设置响应头类型
+        // 设置请求返回数据的类型，为二进制类型数据
+        xhr.responseType = 'blob';
+    2. 拿到服务器返回的数据
+        // 拿到的是 二进制 blob 类型的数据
+        xhr.response;
+    3. 注册下载结束事件函数
+        xhr.onload
+    4. 注册下载进度事件函数
+        xhr.onprogress
+            event.lengthComputable  Boolean类型   进度信息是否可用
+            event.loaded            number类型    已经下载的字节数
+            event.total             number类型    总共需要下载的字节数
+    5. 使用 progress 标签
+        属性 value    当前值
+        属性 max      总共的值
+-->
+
+<input id="submitButton" type="button" value="下载">
+<br>
+<div>
+    <progress id="progressId" value="" max=""></progress>
+    <span id="resultSpan"></span>
+</div>
+
+</body>
+<script src="../../js/3.download/2.ajax_download_progress_bar.js"></script>
+
+</html>
+
+

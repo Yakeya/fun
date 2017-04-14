@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<!--
+
+需求：
+    1. 使用 ajax 异步文件上传
+    2. 能够看到进度条
+
+提示:
+    思路：
+        1. 使用 FormData 来获得 form 表单中的数据
+        2. 使用 ajax 异步上传数据
+        3. 再上传过程中显示进度条
+            1. 使用 xhr.upload 对象获得上传相关的事件
+            2. 标签 progress  自动计算出进度
+                1. 属性 value    当前数字
+                2. 属性 max      总数字
+    注意事项：
+        1. form 表单的三个属性
+        2. formData 获取元素
+            var myFormData = new FormData(myForm);
+        3. ajax
+            1. post 方法
+            2. send(myFormData);
+            3. 不用设置请求头(因为使用了 FormData)
+        4. 上传进度
+            1. 上传结束事件
+                xhr.upload.onload
+            2. 上传进度事件
+                xhr.upload.onprogress
+                    1. 每 50 ms 执行一次
+                    2. 回调参数 event
+                        1. event.lengthComputable   boolean     是否可用
+                        2. event.loaded             number      当前已经上传数据量
+                        3. event.total              number      总共需要上传的数据量
+-->
+
+
+
+
+<form id="myForm" method="POST" enctype="multipart/form-data" >
+
+    <span>上传头像:</span> <input type="file" name="avatar">
+    <br>
+    <!--<input type="submit" value="提交">-->
+</form>
+
+
+
+
+<br>
+<input type="button" id="submit" name="submit" value="上传"/>
+
+<div id="stauts">
+    <progress id="progressId" value="" max=""></progress>
+</div>
+
+
+</body>
+
+<script src="../../js/1.single_file_upload/3.ajax_progress_bar.js"></script>
+</html>

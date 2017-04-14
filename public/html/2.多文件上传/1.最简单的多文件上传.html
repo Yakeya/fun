@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<!--
+
+需求：
+    1. 使用 form 表单完成文件上传
+
+提示:
+    注意事项：
+        1. form 表单的属性
+            1. action       服务器路由
+            2. method       post
+            3. enctype      编码格式 "multipart/form-data"
+        2. 多个 input 标签
+            1. name         名称
+-->
+
+
+<form id="myForm" action="/multi_upload_simple" method="post" enctype="multipart/form-data">
+    <input type="file" name="fileName1"> <br>
+    <input type="file" name="fileName1"> <br>
+    <input type="file" name="fileName2"> <br>
+    <input id="submitButton" type="submit" value="提交"> <br>
+</form>
+
+</body>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

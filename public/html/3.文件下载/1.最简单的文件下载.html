@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+
+需求:
+    1. 点击 a 标签下载文件
+    2. 点击 按钮 下载文件
+
+提示：
+    1. 点击 a 标签发送 http 请求，浏览器自动开始下载
+    2. 点击 按钮 本质上也是发送 http 请求，悄悄的开始下载
+        思路：
+            1. 创建 a 标签
+                link = document.createElement('a');
+            2. 设置 a 标签的属性
+                link.setAttribute('href', url);
+                link.setAttribute('download', 'myFileName');
+            3. 把 a 标签添加到 dom 树中
+            4. 模拟点击事件
+-->
+
+
+<a href="/download">文件下载</a>
+
+<br>
+<br>
+<br>
+
+
+<input id="createA" type="button" value="创建 a 标签 并且 下载">
+<div id="myDiv" style="display: none"> </div>
+
+</body>
+
+<script>
+
+    document.getElementById('createA').onclick = function () {
+        var url = '/download';
+        //创建 a 标签
+        var link = document.createElement('a'); //创建事件对象
+        link.setAttribute('href', url);
+        link.setAttribute('download', 'myFileName'); //此处 访问的目的是下载文件
+
+        //把标签添加到 dom 树里
+        var myDIV = document.getElementById('myDiv');
+        myDIV.appendChild(link);
+
+        //模拟鼠标点击
+        link.click();
+    }
+
+
+</script>
+</html>

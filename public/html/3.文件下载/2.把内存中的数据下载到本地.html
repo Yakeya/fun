@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+
+需求:
+    1. 把内存中的数据下载到本地
+
+提示：
+    1. 创建内存中数据
+        var myBlob = new Blob([data], {type: 'text/plain', endings: 'native' });
+    2. 创建内存中地址
+        var myUrl = URL.createObjectURL(myBlob);
+    3. 动态创建 a 标签（下载文件必须依靠浏览器的能力，js 语言本身没有能力写文件）
+        var link = document.createElement('a');
+        link.setAttribute('href', myUrl);
+        link.setAttribute('download', 'myFileName');
+
+-->
+
+<br>
+<input id="createA" type="button" value="把内存中的数据下载到本地">
+
+<div id="myDiv" style="display: none"> </div>
+
+</body>
+
+<script>
+
+    document.getElementById('createA').onclick = function () {
+        var data = '\
+庆历四年春，滕子京谪守巴陵郡。\n\
+越明年，政通人和，百废具兴。乃重修岳阳楼，增其旧制，刻唐贤今人诗赋于其上。属予作文以记之。\n\
+予观夫巴陵胜状，在洞庭一湖。衔远山，吞长江，浩浩汤汤，横无际涯；朝晖夕阴，气象万千。此则岳阳楼之大观也，前人之述备矣。\n\
+然则北通巫峡，南极潇湘，迁客骚人，多会于此，览物之情，得无异乎？\n\
+若夫淫雨霏霏，连月不开，阴风怒号，浊浪排空；日星隐曜，山岳潜形；商旅不行，樯倾楫摧；薄暮冥冥，虎啸猿啼。\n\
+登斯楼也，则有去国怀乡，忧谗畏讥，满目萧然，感极而悲者矣。\n\
+至若春和景明，波澜不惊，上下天光，一碧万顷；沙鸥翔集，锦鳞游泳；岸芷汀兰，郁郁青青。\n\
+而或长烟一空，皓月千里，浮光跃金，静影沉璧，渔歌互答，此乐何极！\n\
+登斯楼也，则有心旷神怡，宠辱偕忘，把酒临风，其喜洋洋者矣。\n\
+嗟夫！予尝求古仁人之心，或异二者之为，何哉？\n\
+不以物喜，不以己悲；居庙堂之高则忧其民；处江湖之远则忧其君。\n\
+是进亦忧，退亦忧。然则何时而乐耶？其必曰“先天下之忧而忧，后天下之乐而乐”乎？\n\
+噫！微斯人，吾谁与归？\n\
+时六年九月十五日\
+';
+
+        var myBlob = new Blob([data], {type: 'text/plain', endings: 'native' });
+        var myUrl = URL.createObjectURL(myBlob);
+
+        console.log('data.length', data.length*3);
+        console.log('myBlob.size', myBlob.size);
+
+
+        //创建 a 标签
+        var link = document.createElement('a'); //创建事件对象
+        link.setAttribute('href', myUrl);
+        link.setAttribute('download', 'myFileName'); //此处 访问的目的是下载文件
+
+        //把标签添加到 dom 树里
+        var myDIV = document.getElementById('myDiv');
+        myDIV.appendChild(link);
+
+        //模拟鼠标点击
+        link.click();
+    }
+
+
+</script>
+</html>

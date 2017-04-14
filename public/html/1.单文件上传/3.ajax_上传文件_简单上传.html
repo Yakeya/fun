@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<!--
+
+需求：
+    1. 使用 ajax 完成真正无页面刷新的异步 文件上传
+
+
+提示:
+    思路：
+        1. 使用 FormData 来获得 form 表单中的数据
+        2. 使用 ajax 异步上传数据
+
+    注意事项：
+        1. form 表单的三个属性
+        2. formData 获取元素
+            var myFormData = new FormData(myForm);
+        3. ajax
+            1. post 方法
+            2. send(myFormData);
+            3. 不用设置请求头(因为使用了 FormData)
+-->
+
+
+
+<form id="myForm" method="POST" enctype="multipart/form-data" >
+
+    <span>上传头像:</span> <input type="file" name="avatar">
+    <br>
+    <!--<input type="submit" value="提交">-->
+</form>
+
+
+
+
+<br>
+<input type="button" id="submit" name="submit" value="上传"/>
+
+
+
+</body>
+<script src="../../js/1.single_file_upload/2.ajax_simple.js"></script>
+</html>

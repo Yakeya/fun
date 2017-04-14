@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<!--
+
+需求：
+    1. 使用多个表单上传数据
+    2. 使用 ajax 完成文件上传
+    3. 每个表单分别显示的进度
+
+提示:
+    注意事项：
+        1. form 表单的属性
+            1. action       服务器路由
+            2. method       post
+            3. enctype      编码格式 "multipart/form-data"
+        2. 多个 input 标签
+            1. name         名称
+        3. 使用 FormData 类型
+        4. 注意：
+            xhr.upload.onload   表示上传结束
+            xhr.onload          表示获得服务器数据结束
+        5. 每个 form 表单各自独立建立建立 ajax 上传
+-->
+
+<form id="myForm1" action="/multi_upload_ajax" method="post" enctype="multipart/form-data">
+    <input type="file" name="fileName1"> <br>
+    <input type="file" name="fileName1"> <br>
+    <input type="file" name="fileName1"> <br>
+</form>
+<progress id="progressId1" value="" max=""></progress>
+
+<br>
+<br>
+
+<form id="myForm2" action="/multi_upload_ajax" method="post" enctype="multipart/form-data">
+    <input type="file" name="fileName2">
+</form>
+<progress id="progressId2" value="" max=""></progress>
+
+<br>
+<br>
+
+<form id="myForm3" action="/multi_upload_ajax" method="post" enctype="multipart/form-data">
+    <input type="file" name="fileName3">
+</form>
+<progress id="progressId3" value="" max=""></progress>
+
+<br>
+<br>
+<input id="submitButton" type="button" value="提交"> <br>
+
+
+
+</body>
+
+<script src="../../js/2.multi_file_upload/2.ajax_multi_upload_multi_form.js"></script>
+</html>
